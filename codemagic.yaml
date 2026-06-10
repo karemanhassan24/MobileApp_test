@@ -7,7 +7,7 @@ workflows:
       node: latest
       java: 21
       android_signing:
-        - upload
+        - ali
 
     scripts:
       - npm install

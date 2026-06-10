@@ -11,6 +11,21 @@ workflows:
       - npm install
       - npm run build
       - npx cap add android
+      - |
+        python3 - <<'PY'
+        from pathlib import Path
+
+        manifest_path = Path("android/app/src/main/AndroidManifest.xml")
+        manifest = manifest_path.read_text()
+        permissions = (
+            '    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />\n'
+            '    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />\n'
+        )
+
+        if "android.permission.ACCESS_FINE_LOCATION" not in manifest:
+            manifest = manifest.replace("    <application", permissions + "    <application")
+            manifest_path.write_text(manifest)
+        PY
       - npx cap sync android
       - cd android && chmod +x gradlew && ./gradlew assembleDebug
 

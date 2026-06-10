@@ -1,0 +1,10 @@
+{
+  "appId": "com.kareman.mobileapp",
+  "appName": "MobileApp",
+  "webDir": "dist",
+  "plugins": {
+    "Geolocation": {
+      "permissions": ["location"]
+    }
+  }
+}

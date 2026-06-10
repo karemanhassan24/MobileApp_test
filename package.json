@@ -1,0 +1,21 @@
+{
+  "name": "mobile-app",
+  "version": "1.0.0",
+  "description": "Mobile app generated from HTML and JavaScript.",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host 0.0.0.0",
+    "sync": "cap sync",
+    "android": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/geolocation": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "vite": "latest"
+  }
+}

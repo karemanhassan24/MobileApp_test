@@ -27,7 +27,7 @@ workflows:
             manifest_path.write_text(manifest)
         PY
       - npx cap sync android
-      - cd android && chmod +x gradlew && ./gradlew assembleDebug
+      - cd android && chmod +x gradlew && ./gradlew bundleRelease
 
     artifacts:
-      - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
